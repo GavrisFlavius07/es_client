@@ -24,16 +24,16 @@ public class Main {
         System.out.println("Connessione effettuata");
 
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        PrintWriter out = new PrintWriter(socket.getOutputStream(), true); // auto flush
+        PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
         String version = in.readLine();
         System.out.println("Versione del server: " + version);
 
         String input;
         do {
-            System.out.println("Inserisci una stringa (o 'quit' per uscire):");
+            System.out.println("Inserisci una stringa (o 'esci' per uscire):");
             input = scanner.nextLine();
-
+            
             out.println(input); 
             
             if (!input.equals("esci")) {
